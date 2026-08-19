@@ -1,0 +1,1015 @@
+/* =========================================================
+   Luxury Persian Wedding Invitation - Style
+   White Theme with Slate Grey Borders & Gold Accents
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-pure: #FFFFFF;
+  --bg-subtle: #F8FAFC;
+  --border-slate: #CBD5E1;
+  --border-slate-light: #E2E8F0;
+  --text-dark: #1E293B;
+  --text-muted: #64748B;
+  --gold-primary: #C5A059;
+  --gold-light: #E7CF9B;
+  --gold-dark: #8C6D31;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-pure);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ----------------- تایپوگرافی ----------------- */
+.heading-cinzel {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.25em;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.heading-fa {
+  font-family: 'Amiri', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-top: 0.5rem;
+}
+
+.gold-accent-line {
+  width: 90px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--border-slate), transparent);
+  margin: 0.6rem auto 1.5rem auto;
+}
+
+/* ----------------- کنترل شناور موزیک ----------------- */
+.floating-audio {
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.floating-audio.hidden {
+  display: none;
+}
+
+.audio-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1E293B;
+  border: 1px solid #334155;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+  transition: all 0.3s ease;
+}
+
+.audio-btn:hover {
+  transform: scale(1.06);
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+}
+
+.icon.hidden {
+  display: none;
+}
+
+.spinning {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.volume-slider-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border-slate);
+  padding: 0.35rem 0.6rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  display: flex;
+  align-items: center;
+}
+
+.volume-slider-wrapper input[type="range"] {
+  width: 70px;
+  height: 4px;
+  accent-color: #1E293B;
+  cursor: pointer;
+}
+
+/* ----------------- صفحه اول: پاکت حریر تمام صفحه ----------------- */
+.envelope-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.envelope-overlay.opened {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+.envelope-silk-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, #FFFFFF 0%, #F8FAFC 60%, #E2E8F0 100%);
+}
+
+.envelope-lace-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image: radial-gradient(#94A3B8 0.75px, transparent 0.75px);
+  background-size: 20px 20px;
+}
+
+.screen-frame {
+  position: absolute;
+  inset: 1.5rem;
+  border: 2px solid #CBD5E1;
+  border-radius: 1.5rem;
+  pointer-events: none;
+}
+
+.screen-frame-inner {
+  position: absolute;
+  inset: 0.4rem;
+  border: 1px dashed #94A3B8;
+  border-radius: 1.1rem;
+}
+
+/* لبه‌های مثلثی پاکت */
+.flap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.9s ease;
+}
+
+.flap-bottom {
+  clip-path: polygon(0% 100%, 50% 50%, 100% 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+  box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.flap-left {
+  clip-path: polygon(0% 0%, 50% 50%, 0% 100%);
+  background: linear-gradient(90deg, #FFFFFF 0%, #E2E8F0 100%);
+}
+
+.flap-right {
+  clip-path: polygon(100% 0%, 50% 50%, 100% 100%);
+  background: linear-gradient(270deg, #FFFFFF 0%, #E2E8F0 100%);
+}
+
+.flap-top {
+  height: 50%;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  transform-origin: top;
+  border-top: 1px solid #CBD5E1;
+}
+
+.flap-top.open {
+  transform: rotateX(180deg);
+}
+
+/* مهر موم طلایی در مرکز */
+.center-seal-wrapper {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow-ring {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.2);
+  filter: blur(20px);
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+.wax-seal {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #D4AF37 0%, #A67C1E 55%, #684B0B 100%);
+  box-shadow: 0 10px 25px rgba(112, 79, 24, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.wax-seal:hover {
+  transform: scale(1.08);
+}
+
+.wax-seal.broken {
+  animation: sealBreak 0.7s forwards ease-in-out;
+}
+
+@keyframes sealBreak {
+  50% { transform: scale(1.2) rotate(10deg); filter: drop-shadow(0 0 15px #FFD700); }
+  100% { transform: scale(1.4) rotate(25deg); opacity: 0; filter: blur(4px); }
+}
+
+.wax-seal-inner {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(255, 248, 220, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFFDF8;
+}
+
+.monogram {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.divider {
+  font-weight: 300;
+  opacity: 0.85;
+}
+
+.seal-line {
+  width: 20px;
+  height: 1px;
+  background: rgba(255, 248, 220, 0.7);
+  margin: 2px 0;
+}
+
+.seal-year {
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.seal-touch-hint {
+  margin-top: 1.5rem;
+  padding: 0.4rem 1.1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #CBD5E1;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #334155;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  animation: pulseHint 2s infinite ease-in-out;
+}
+
+@keyframes pulseHint {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; transform: translateY(-2px); }
+}
+
+/* ----------------- کانتینر اصلی محتوا ----------------- */
+.main-container {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.page-section {
+  position: relative;
+  padding: 3.5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.corner-decor {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+}
+.corner-decor.top-left { top: 1rem; left: 1rem; border-top: 2px solid var(--border-slate); border-left: 2px solid var(--border-slate); }
+.corner-decor.top-right { top: 1rem; right: 1rem; border-top: 2px solid var(--border-slate); border-right: 2px solid var(--border-slate); }
+.corner-decor.bottom-left { bottom: 1rem; left: 1rem; border-bottom: 2px solid var(--border-slate); border-left: 2px solid var(--border-slate); }
+.corner-decor.bottom-right { bottom: 1rem; right: 1rem; border-bottom: 2px solid var(--border-slate); border-right: 2px solid var(--border-slate); }
+
+.section-badge {
+  display: inline-flex;
+  padding: 0.3rem 1rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-slate-light);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.75rem;
+}
+
+/* ----------------- عکس کودکی و اسامی ----------------- */
+.photo-card {
+  width: 270px;
+  height: 270px;
+  padding: 0.6rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-slate-light);
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(203, 213, 225, 0.5);
+  margin-top: 0.5rem;
+}
+
+.photo-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  border: 1px dashed var(--border-slate);
+}
+
+.photo-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 0.5rem;
+  inset-inline: 0.5rem;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.couple-names-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.name-en {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.heart-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  border: 1px solid var(--border-slate);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heart-icon {
+  width: 18px;
+  height: 18px;
+  color: #64748B;
+  animation: heartBeat 1.8s infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+.couple-names-fa {
+  font-family: 'Amiri', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #334155;
+  margin-top: 0.25rem;
+}
+
+.quote-box {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1.5rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-slate-light);
+  border-radius: 1rem;
+}
+
+.quote-text {
+  font-family: 'Amiri', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.family-names-box {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1.75rem;
+  padding: 1rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-slate-light);
+  border-radius: 1rem;
+}
+
+.family-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.family-title-en {
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+.family-sep {
+  color: #94A3B8;
+  margin: 0 0.35rem;
+}
+
+.family-title-fa {
+  font-family: 'Amiri', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #475569;
+  margin-top: 0.2rem;
+}
+
+/* ----------------- دیوایدرهای اسلیمی ----------------- */
+.floral-divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.divider-line {
+  flex: 1;
+  max-width: 140px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #CBD5E1);
+}
+
+.divider-line.right {
+  background: linear-gradient(270deg, transparent, #CBD5E1);
+}
+
+.divider-icon {
+  padding: 0 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.divider-icon svg {
+  width: 32px;
+  height: 24px;
+}
+
+/* ----------------- بخش‌های با عکس پس‌زمینه ----------------- */
+.section-poem, .section-venue {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid var(--border-slate-light);
+  margin-bottom: 1.5rem;
+}
+
+.section-bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+}
+
+.section-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.relative-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poem-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 1.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border-slate-light);
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.names-subheading {
+  font-family: 'Amiri', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.family-subheading {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.card-separator {
+  width: 50px;
+  height: 1px;
+  background: var(--border-slate);
+  margin: 0.75rem auto;
+}
+
+.poem-quote {
+  font-family: 'Amiri', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.8;
+  margin: 0.5rem 0;
+}
+
+.poem-desc {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.details-grid {
+  width: 100%;
+  max-width: 480px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.detail-card {
+  padding: 0.9rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border-slate-light);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: right;
+}
+
+.detail-icon {
+  font-size: 1.3rem;
+}
+
+.detail-title {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.detail-val {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* ----------------- تایمر شمارش معکوس ----------------- */
+.countdown-grid {
+  width: 100%;
+  max-width: 440px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.timer-box {
+  padding: 0.75rem 0.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border-slate-light);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.timer-num {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.timer-num.pulse {
+  animation: numPulse 1s infinite;
+}
+
+@keyframes numPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.timer-unit {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ----------------- تالار عمارت ماهور ----------------- */
+.venue-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border-slate-light);
+  border-radius: 1.25rem;
+}
+
+.venue-photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.venue-photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.venue-tag {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.venue-title {
+  font-family: 'Amiri', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.venue-address {
+  font-size: 0.85rem;
+  color: #475569;
+  margin: 0.4rem 0 1.25rem 0;
+  line-height: 1.6;
+}
+
+.venue-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn-neshan {
+  background: #1E293B;
+  color: #FFFFFF;
+}
+
+.btn-neshan:hover {
+  background: #0F172A;
+}
+
+.btn-copy {
+  background: #FFFFFF;
+  border: 1px solid var(--border-slate);
+  color: #334155;
+}
+
+.btn-copy:hover {
+  background: var(--bg-subtle);
+}
+
+/* ----------------- بخش پیام پایانی و فرم RSVP ----------------- */
+.story-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 1.5rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-slate-light);
+  border-radius: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.story-text {
+  font-family: 'Amiri', serif;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.deadline-banner {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-slate-light);
+  border-radius: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.closing-signature {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-slate-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.sig-fa {
+  font-family: 'Amiri', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.sig-en {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.rsvp-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 1.75rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-slate-light);
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+.rsvp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-slate-light);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.rsvp-title {
+  font-family: 'Amiri', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.rsvp-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-slate-light);
+  border-radius: 9999px;
+}
+
+.form-group {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 0.35rem;
+}
+
+.req {
+  color: #E11D48;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-slate-light);
+  border-radius: 0.75rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: all 0.2s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  background: #FFFFFF;
+  border-color: #94A3B8;
+  box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.2);
+}
+
+.radio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-slate-light);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.radio-label.active {
+  background: #F1F5F9;
+  border-color: #94A3B8;
+  font-weight: 700;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 0.85rem;
+  background: #1E293B;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.75rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.btn-submit:hover {
+  background: #0F172A;
+}
+
+/* کارت وضعیت ثبت موفق */
+.rsvp-success {
+  padding: 1.5rem;
+  background: var(--bg-subtle);
+  border-radius: 1rem;
+  border: 1px solid var(--border-slate-light);
+}
+
+.rsvp-success.hidden {
+  display: none;
+}
+
+.success-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #DCFCE7;
+  color: #16A34A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 auto 0.75rem auto;
+}
+
+.btn-edit {
+  margin-top: 1rem;
+  padding: 0.4rem 1rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-slate);
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ----------------- فوتر ----------------- */
+.site-footer {
+  padding: 2.5rem 1rem 3rem 1rem;
+  text-align: center;
+  border-top: 1px solid var(--border-slate-light);
+  margin-top: 1rem;
+}
+
+.footer-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.footer-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0.25rem 0;
+}
+
+.footer-note {
+  font-size: 0.7rem;
+  color: #94A3B8;
+}
+
+/* ----------------- ریسپانسیو ----------------- */
+@media (min-width: 640px) {
+  .radio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .venue-buttons {
+    flex-direction: row;
+  }
+  .venue-buttons .btn {
+    flex: 1;
+  }
+                            }
