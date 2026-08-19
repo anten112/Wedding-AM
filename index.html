@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>جشن پیوند آزیتا و محمد | کارت دعوت عروسی</title>
+  
+  <!-- فونت‌های اختصاصی لوکس -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- کتابخانه افکت کانفتی (شادی‌باش) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- فایل صوتی پس‌زمینه -->
+  <audio id="wedding-audio" loop preload="auto">
+    <source src="music/wedding.mp3" type="audio/mp3" />
+  </audio>
+
+  <!-- دکمه شناور کنترل موسیقی -->
+  <div id="floating-audio-control" class="floating-audio hidden">
+    <button id="audio-toggle-btn" class="audio-btn" aria-label="کنترل صدا">
+      <svg id="icon-disc" class="icon spinning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <circle cx="12" cy="12" r="3"></circle>
+      </svg>
+      <svg id="icon-mute" class="icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="23" y1="9" x2="17" y2="15"></line>
+        <line x1="17" y1="9" x2="23" y2="15"></line>
+      </svg>
+    </button>
+    <div class="volume-slider-wrapper">
+      <input type="range" id="volume-range" min="0" max="1" step="0.05" value="0.5" aria-label="میزان صدا" />
+    </div>
+  </div>
+
+  <!-- پوشش تمام‌صفحه مقدمه (پاکت حریر با مهر موم طلاکوب A | M) -->
+  <div id="envelope-overlay" class="envelope-overlay">
+    <div class="envelope-silk-bg"></div>
+    <div class="envelope-lace-bg"></div>
+    
+    <!-- کادر دور تمام‌صفحه -->
+    <div class="screen-frame">
+      <div class="screen-frame-inner"></div>
+    </div>
+
+    <!-- لایه‌های سه‌بعدی پاکت حریر -->
+    <div class="flap flap-bottom"></div>
+    <div class="flap flap-left"></div>
+    <div class="flap flap-right"></div>
+    <div id="flap-top" class="flap flap-top"></div>
+
+    <!-- مهر موم طلایی در مرکز -->
+    <div class="center-seal-wrapper">
+      <div class="glow-ring"></div>
+      <div id="wax-seal" class="wax-seal">
+        <div class="wax-seal-inner">
+          <span class="monogram">A <span class="divider">|</span> M</span>
+          <div class="seal-line"></div>
+          <span class="seal-year">۱۴۰۵</span>
+        </div>
+      </div>
+      <div class="seal-touch-hint">
+        <span>✨ برای گشودن دعوت‌نامه لمس نمایید ✨</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- محتوای اصلی کارت دعوت به صورت اسکرولی و یکپارچه -->
+  <main id="main-content" class="main-container">
+
+    <!-- بخش اول: آغاز قصه و عکس کودکی -->
+    <section id="section-1" class="page-section section-hero">
+      <div class="corner-decor top-left"></div>
+      <div class="corner-decor top-right"></div>
+      <div class="corner-decor bottom-left"></div>
+      <div class="corner-decor bottom-right"></div>
+
+      <div class="section-badge">
+        <span>ROYAL WEDDING</span>
+      </div>
+      <h1 class="heading-cinzel">THE WEDDING OF</h1>
+      <div class="gold-accent-line"></div>
+
+      <!-- قاب عکس کودکی -->
+      <div class="photo-card">
+        <div class="photo-inner">
+          <img src="childhood.jpg" alt="Azita and Mohammad Childhood" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?w=600&auto=format&fit=crop&q=80'" />
+          <div class="photo-caption">
+            <span>آغاز قصه ما از سال‌های دور ✨</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- نام‌های عروس و داماد -->
+      <div class="couple-names-wrap">
+        <span class="name-en">Azita</span>
+        <div class="heart-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="heart-icon">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+        <span class="name-en">Mohammad</span>
+      </div>
+      <h2 class="couple-names-fa">آزیتا و محمد</h2>
+
+      <div class="quote-box">
+        <p class="quote-text">«باهم برای هم تا همیشه»</p>
+      </div>
+
+      <div class="family-names-box">
+        <span class="family-label">با احترام از طرف خانواده‌های</span>
+        <div class="family-title-en">
+          <span>Hossein zadeh</span>
+          <span class="family-sep">❦</span>
+          <span>Naeimi</span>
+        </div>
+        <div class="family-title-fa">(حسین‌زاده و نعیمی)</div>
+      </div>
+    </section>
+
+    <!-- دیوایدر گل و برگ طلایی -->
+    <div class="floral-divider">
+      <div class="divider-line left"></div>
+      <div class="divider-icon">
+        <svg viewBox="0 0 48 48" fill="none">
+          <path d="M14 24C17 19 21 17 24 24C21 21 17 22 14 24Z" fill="#C5A059" />
+          <path d="M10 20C13 16 17 15 19 20C16 18 13 18 10 20Z" fill="#C5A059" />
+          <path d="M34 24C31 19 27 17 24 24C27 21 31 22 34 24Z" fill="#C5A059" />
+          <path d="M38 20C35 16 31 15 29 20C32 18 35 18 38 20Z" fill="#C5A059" />
+          <circle cx="24" cy="24" r="3" fill="#8C6D31" />
+          <path d="M4 24H44" stroke="#C5A059" stroke-width="1.2" />
+        </svg>
+      </div>
+      <div class="divider-line right"></div>
+    </div>
+
+    <!-- بخش دوم: شعر و جزئیات زمان مراسم -->
+    <section id="section-2" class="page-section section-poem">
+      <div class="section-bg-image" style="background-image: url('fish-dress.jpg');"></div>
+      <div class="section-bg-overlay"></div>
+
+      <div class="relative-content">
+        <div class="section-badge">
+          <span>به نامش و در پناهش</span>
+        </div>
+
+        <div class="poem-card">
+          <h3 class="names-subheading">آزیتا و محمد</h3>
+          <span class="family-subheading">حسین‌زاده و نعیمی</span>
+          <div class="card-separator"></div>
+
+          <blockquote class="poem-quote">
+            «من از جهان به تو دلبسته‌ام که جانِ منی»
+          </blockquote>
+
+          <p class="poem-desc">
+            حضور گرم و صمیمانه شما، بر شکوه و سرور این پیوند خواهد افزود و زیباترین یادگاری آغاز ما خواهد بود.
+          </p>
+        </div>
+
+        <!-- کارت‌های تاریخ و زمان -->
+        <div class="details-grid">
+          <div class="detail-card">
+            <div class="detail-icon">📅</div>
+            <div class="detail-text">
+              <span class="detail-title">تاریخ مراسم</span>
+              <span class="detail-val">یکشنبه ۸ شهریور ۱۴۰۵</span>
+            </div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-icon">⏰</div>
+            <div class="detail-text">
+              <span class="detail-title">زمان جشن</span>
+              <span class="detail-val">از ساعت ۱۸ تا آخرین تپش موسیقی 🎶</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- دیوایدر گل فیلیگری سفید -->
+    <div class="floral-divider">
+      <div class="divider-line left"></div>
+      <div class="divider-icon">
+        <svg viewBox="0 0 64 32" fill="none">
+          <path d="M32 6 C30 11, 26 13, 22 14 C27 15, 30 18, 32 26 C34 18, 37 15, 42 14 C38 13, 34 11, 32 6 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" />
+          <circle cx="32" cy="16" r="2.5" fill="#C5A059" />
+          <path d="M22 16 C16 16, 12 12, 8 16 C12 20, 16 17, 20 16" stroke="#94A3B8" stroke-width="1" />
+          <path d="M42 16 C48 16, 52 12, 56 16 C52 20, 48 17, 44 16" stroke="#94A3B8" stroke-width="1" />
+        </svg>
+      </div>
+      <div class="divider-line right"></div>
+    </div>
+
+    <!-- بخش سوم: شمارش معکوس و آدرس تالار -->
+    <section id="section-3" class="page-section section-venue">
+      <div class="section-bg-image" style="background-image: url('arch-photo.jpg');"></div>
+      <div class="section-bg-overlay"></div>
+
+      <div class="relative-content">
+        <div class="section-badge">
+          <span>COUNTDOWN & VENUE</span>
+        </div>
+        <h2 class="heading-fa">لحظه‌شماری برای دیدار</h2>
+        <div class="gold-accent-line"></div>
+
+        <!-- تایمر معکوس -->
+        <div class="countdown-grid">
+          <div class="timer-box">
+            <span id="days" class="timer-num">۰</span>
+            <span class="timer-unit">روز</span>
+          </div>
+          <div class="timer-box">
+            <span id="hours" class="timer-num">۰۰</span>
+            <span class="timer-unit">ساعت</span>
+          </div>
+          <div class="timer-box">
+            <span id="minutes" class="timer-num">۰۰</span>
+            <span class="timer-unit">دقیقه</span>
+          </div>
+          <div class="timer-box">
+            <span id="seconds" class="timer-num pulse">۰۰</span>
+            <span class="timer-unit">ثانیه</span>
+          </div>
+        </div>
+
+        <!-- باکس مشخصات تالار عمارت ماهور -->
+        <div class="venue-card">
+          <div class="venue-photo-wrapper">
+            <img src="hall-photo.jpg" alt="عمارت ماهور تالار پذیرایی" onerror="this.src='https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&auto=format&fit=crop&q=80'" />
+            <span class="venue-tag">محل برگزاری جشن</span>
+          </div>
+
+          <h3 class="venue-title">📍 عمارت ماهور (تالار پذیرایی)</h3>
+          <p id="venue-address" class="venue-address">فردیس، بلوار قریشی شمالی، بلوار سی و یکم، خیابان مولوی</p>
+
+          <div class="venue-buttons">
+            <a href="https://nshn.ir/berbvkOPexW-5x" target="_blank" rel="noopener noreferrer" class="btn btn-neshan">
+              <span>مسیریابی با نشان (Neshan)</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+              </svg>
+            </a>
+            <button id="btn-copy-address" class="btn btn-copy" type="button">
+              <span id="copy-text">کپی آدرس تالار</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- دیوایدر طلایی -->
+    <div class="floral-divider">
+      <div class="divider-line left"></div>
+      <div class="divider-icon">
+        <svg viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="3" fill="#8C6D31" />
+          <path d="M10 24C16 18 20 20 24 24C20 28 16 30 10 24Z" fill="#C5A059" />
+          <path d="M38 24C32 18 28 20 24 24C28 28 32 30 38 24Z" fill="#C5A059" />
+          <path d="M4 24H44" stroke="#C5A059" stroke-width="1.2" />
+        </svg>
+      </div>
+      <div class="divider-line right"></div>
+    </div>
+
+    <!-- بخش چهارم: متن پایانی و فرم تایید حضور (RSVP) -->
+    <section id="section-4" class="page-section section-rsvp">
+      <div class="section-badge">
+        <span>FINAL WORDS & RSVP</span>
+      </div>
+      <h2 class="heading-fa">پیام پایانی و اعلام حضور</h2>
+      <div class="gold-accent-line"></div>
+
+      <div class="story-card">
+        <p class="story-text">
+          و حالا در آغاز سفریم، سفری تا بینهایت، سفری تا انتهای زندگی، به امید باهم رفتن و با هم ماندن، تا جایی که هیچ اشکی از چشمی نبارد جز به شوق. حضور شما در آغاز این سفر زیباترین هدیه این شب خواهد بود.
+        </p>
+
+        <div class="deadline-banner">
+          <span>لطفا جهت هماهنگی هرچه بهتر تا تاریخ ۳۱ مرداد ۱۴۰۵ حضور یا عدم حضور خود را اعلام نمایید.</span>
+        </div>
+
+        <div class="closing-signature">
+          <span class="sig-fa">با مهر و احترام - محمد و آزیتا</span>
+          <span class="sig-en">Mohammad & Azita</span>
+        </div>
+      </div>
+
+      <!-- فرم RSVP -->
+      <div class="rsvp-card">
+        <div class="rsvp-header">
+          <h3 class="rsvp-title">فرم اعلام حضور در جشن</h3>
+          <span class="rsvp-badge">RSVP</span>
+        </div>
+
+        <form id="rsvp-form" class="rsvp-form">
+          <div class="form-group">
+            <label for="rsvp-name">نام و نام خانوادگی شما <span class="req">*</span></label>
+            <input type="text" id="rsvp-name" required placeholder="مثال: سارا رضایی" />
+          </div>
+
+          <div class="form-group">
+            <label>وضعیت حضور <span class="req">*</span></label>
+            <div class="radio-grid">
+              <label class="radio-label active" id="label-attending">
+                <input type="radio" name="attendance" value="attending" checked />
+                <span>با افتخار حضور خواهم داشت ✨</span>
+              </label>
+              <label class="radio-label" id="label-not-attending">
+                <input type="radio" name="attendance" value="not_attending" />
+                <span>متأسفانه سعادت حضور ندارم 🤍</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group" id="guests-group">
+            <label for="rsvp-guests">تعداد همراهان (همراه با شما)</label>
+            <select id="rsvp-guests">
+              <option value="1">۱ نفر (فقط خودم)</option>
+              <option value="2">۲ نفر</option>
+              <option value="3">۳ نفر</option>
+              <option value="4">۴ نفر</option>
+              <option value="5">۵ نفر یا بیشتر</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="rsvp-msg">پیام تبریک و یادگاری (اختیاری)</label>
+            <textarea id="rsvp-msg" rows="2" placeholder="تبریک یا آرزوی قشنگ خود را بنویسید..."></textarea>
+          </div>
+
+          <button type="submit" id="btn-submit-rsvp" class="btn-submit">
+            <span>ثبت نهایی و ارسال پاسخ</span>
+          </button>
+        </form>
+
+        <div id="rsvp-success" class="rsvp-success hidden">
+          <div class="success-icon">✓</div>
+          <h4 id="success-guest-name">پاسخ شما با موفقیت ثبت شد</h4>
+          <p id="success-desc">مشتاقانه چشم‌انتظار دیدار شما هستیم! ✨</p>
+          <button id="btn-edit-rsvp" class="btn-edit" type="button">ویرایش پاسخ</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- فوتر لوکس -->
+    <footer class="site-footer">
+      <div class="footer-title">AZITA & MOHAMMAD WEDDING</div>
+      <div class="footer-date">یکشنبه ۸ شهریور ۱۴۰۵ | عمارت ماهور</div>
+      <div class="footer-note">طراحی شده با عشق و وقار برای جاودانگی زیباترین شب زندگی</div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
