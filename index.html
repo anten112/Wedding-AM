@@ -5,24 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>جشن پیوند آزیتا و محمد | The Wedding of Azita & Mohammad</title>
   
-  <!-- فونت‌های اختصاصی لوکس و کلاسیک -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   
-  <!-- کتابخانه افکت کانفتی (شادی‌باش طلاکوب) -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- فایل صوتی پس‌زمینه مراسم -->
   <audio id="wedding-audio" loop preload="auto">
     <source src="music/wedding.mp3" type="audio/mp3" />
   </audio>
 
-  <!-- دکمه شناور لوکس کنترل موسیقی -->
   <div id="floating-audio-control" class="floating-audio hidden">
     <button id="audio-toggle-btn" class="audio-btn" aria-label="کنترل موسیقی">
       <svg id="icon-disc" class="icon spinning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -40,7 +35,6 @@
     </div>
   </div>
 
-  <!-- ================= پوشش تمام‌صفحه پاکت حریر با تاج گلبرگ اسلیمی ================= -->
   <div id="envelope-overlay" class="envelope-overlay">
     <div class="envelope-silk-bg"></div>
     <div class="envelope-lace-bg"></div>
@@ -94,7 +88,6 @@
     </div>
   </div>
 
-  <!-- ================= محتوای اصلی کارت دعوت ================= -->
   <main id="main-content" class="main-container">
 
     <!-- بخش اول -->
@@ -126,7 +119,6 @@
         <span class="name-en">Mohammad</span>
       </div>
 
-      <!-- اصلاح ویرگول‌ها -->
       <div class="quote-box">
         <p class="quote-text">«باهم، برای هم، تا همیشه»</p>
       </div>
@@ -147,10 +139,10 @@
       <div class="divider-line right"></div>
     </div>
 
-    <!-- بخش دوم: بک‌گراند عکس سیاه و سفید (fish-dress.jpg) -->
+    <!-- بخش دوم: با پس‌زمینه عکس لباس ماهی (fish-dress.jpg) با وضوح بالا -->
     <section id="section-2" class="page-section section-poem">
       <div class="section-bg-image" style="background-image: url('fish-dress.jpg');"></div>
-      <div class="section-bg-overlay"></div>
+      <div class="section-bg-overlay section-bg-overlay-sharp"></div>
 
       <div class="relative-content">
         <div class="section-badge">
@@ -193,7 +185,7 @@
       <div class="divider-line right"></div>
     </div>
 
-    <!-- بخش سوم: شمارش معکوس و تالار (بدون عبارت تالار پذیرایی) -->
+    <!-- بخش سوم: تالار (بدون عبارت تالار پذیرایی) -->
     <section id="section-3" class="page-section section-venue">
       <div class="section-bg-image" style="background-image: url('arch-photo.jpg');"></div>
       <div class="section-bg-overlay"></div>
@@ -230,7 +222,6 @@
             <span class="venue-tag">محل برگزاری جشن</span>
           </div>
 
-          <!-- حذف عبارت تالار پذیرایی -->
           <h3 class="venue-title">📍 عمارت ماهور</h3>
           <p id="venue-address" class="venue-address">فردیس، بلوار قریشی شمالی، بلوار سی و یکم، خیابان مولوی</p>
 
@@ -252,10 +243,10 @@
       <div class="divider-line right"></div>
     </div>
 
-    <!-- بخش چهارم: بک‌گراند عکس طاق هلالی (arch-photo.jpg) و حذف عنوان اضافی -->
+    <!-- بخش چهارم: با پس‌زمینه عکس طاق هلالی (arch-photo.jpg) با وضوح بالا و بدون عنوان تکراری -->
     <section id="section-4" class="page-section section-rsvp">
       <div class="section-bg-image" style="background-image: url('arch-photo.jpg');"></div>
-      <div class="section-bg-overlay"></div>
+      <div class="section-bg-overlay section-bg-overlay-sharp"></div>
 
       <div class="relative-content">
         <div class="story-card">
@@ -340,3 +331,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
