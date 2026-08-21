@@ -1,5 +1,5 @@
 /* =========================================================
-   Luxury Digital Wedding Invitation - Final Fixed Theme
+   Luxury Digital Wedding Invitation - Ultra Clear Background Theme
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
@@ -405,7 +405,7 @@ body {
 .divider-line.right { background: linear-gradient(270deg, transparent, #CBD5E1); }
 .divider-icon { padding: 0 0.75rem; font-size: 1.1rem; }
 
-/* ----------------- عکس‌های پس‌زمینه بزرگ و کارت‌های شیشه‌ای شفاف ----------------- */
+/* ----------------- عکس‌های پس‌زمینه بزرگ و کارت‌های شیشه‌ایِ فوق‌العاده شفاف ----------------- */
 .section-poem, .section-venue, .section-rsvp {
   position: relative;
   overflow: hidden;
@@ -431,18 +431,18 @@ body {
   align-items: center;
 }
 
-/* کارت‌ها با شیشه‌ای بسیار شفاف (۵۰٪) تا عکس‌های پشت سرشان کاملاً واضح و زنده دیده شوند و متن‌ها هم خوانا باشند */
+/* کارت‌ها با پس‌زمینه بسیار شفاف (۳۰ درصد) و بلور ملایم تا عکس‌های پشت سرشان کاملاً واضح و زنده دیده شوند */
 .poem-card, .venue-card, .story-card, .rsvp-card {
   position: relative;
   width: 100%;
   max-width: 580px;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.50);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 1.25rem;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
   margin-bottom: 1rem;
 }
 
@@ -450,7 +450,8 @@ body {
   font-family: 'Amiri', serif;
   font-size: 2.1rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #0F172A;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.8);
 }
 
 .card-separator-floral {
@@ -462,23 +463,24 @@ body {
 
 .sep-symbol { color: var(--gold-primary); font-size: 1.1rem; }
 
-/* شعر بزرگ و مرتب با کلمات برجسته جهان و جانِ */
+/* شعر با فونت هنری و درشت شدن کلمات «جهان» و «جانِ» روی عکس زنده */
 .poem-quote {
   font-family: 'Amiri', serif;
-  font-size: 1.9rem;
+  font-size: 1.95rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #0F172A;
   line-height: 2.6;
   text-align: center;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.9);
 }
 
 .big-word {
-  font-size: 1.4em;
-  color: var(--gold-primary);
+  font-size: 1.45em;
+  color: #9A7B38;
   font-weight: 800;
   display: inline-block;
   padding: 0 0.15em;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-shadow: 0 2px 5px rgba(255,255,255,0.9);
 }
 
 .details-vertical-stack {
@@ -491,10 +493,10 @@ body {
 
 .detail-card-vertical {
   padding: 1.1rem 1.25rem;
-  background: rgba(255, 255, 255, 0.50);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.30);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 1.1rem;
   display: flex;
   flex-direction: column;
@@ -515,7 +517,7 @@ body {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: #F1F5F9;
+  background: rgba(255, 255, 255, 0.8);
   border: 1px solid var(--border-slate-light);
   display: flex;
   align-items: center;
@@ -534,8 +536,8 @@ body {
 
 @media (min-width: 640px) { .detail-text-centered { align-items: flex-start; } }
 
-.detail-title { font-size: 0.75rem; color: var(--text-muted); font-weight: 700; }
-.detail-val { font-family: 'Amiri', serif; font-size: 1.3rem; font-weight: 700; color: var(--text-dark); margin-top: 0.15rem; }
+.detail-title { font-size: 0.75rem; color: #334155; font-weight: 800; }
+.detail-val { font-family: 'Amiri', serif; font-size: 1.3rem; font-weight: 700; color: #0F172A; margin-top: 0.15rem; text-shadow: 0 1px 3px rgba(255,255,255,0.8); }
 
 .countdown-grid {
   width: 100%;
@@ -548,14 +550,14 @@ body {
 
 .timer-box {
   padding: 0.75rem 0.25rem;
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.40);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 1rem;
 }
 
-.timer-num { display: block; font-size: 1.85rem; font-weight: 800; color: var(--text-dark); }
-.timer-unit { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+.timer-num { display: block; font-size: 1.85rem; font-weight: 800; color: #0F172A; }
+.timer-unit { font-size: 0.75rem; color: #334155; font-weight: 700; }
 
 .venue-photo-wrapper {
   position: relative;
@@ -579,8 +581,8 @@ body {
   border-radius: 9999px;
 }
 
-.venue-title { font-family: 'Amiri', serif; font-size: 1.45rem; font-weight: 700; }
-.venue-address { font-size: 0.85rem; color: #475569; margin: 0.4rem 0 1.25rem 0; line-height: 1.6; }
+.venue-title { font-family: 'Amiri', serif; font-size: 1.45rem; font-weight: 700; color: #0F172A; }
+.venue-address { font-size: 0.85rem; color: #1E293B; font-weight: 600; margin: 0.4rem 0 1.25rem 0; line-height: 1.6; }
 
 .venue-buttons { display: flex; flex-direction: column; gap: 0.5rem; }
 
@@ -599,25 +601,26 @@ body {
 }
 
 .btn-neshan { background: #1E293B; color: #FFFFFF; }
-.btn-copy { background: #FFFFFF; border: 1px solid var(--border-slate); color: #334155; }
+.btn-copy { background: rgba(255, 255, 255, 0.8); border: 1px solid var(--border-slate); color: #334155; }
 
 .story-text {
   font-family: 'Amiri', serif;
   font-size: 1.3rem;
   line-height: 2.1;
-  color: var(--text-dark);
+  color: #0F172A;
   font-weight: 700;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.8);
 }
 
 .deadline-banner {
   margin-top: 1rem;
   padding: 0.65rem 1rem;
-  background: rgba(248, 250, 252, 0.8);
+  background: rgba(255, 255, 255, 0.6);
   border: 1px solid var(--border-slate-light);
   border-radius: 0.75rem;
   font-size: 0.8rem;
   font-weight: 700;
-  color: #334155;
+  color: #1E293B;
 }
 
 .closing-signature {
@@ -628,8 +631,8 @@ body {
   flex-direction: column;
 }
 
-.sig-fa { font-family: 'Amiri', serif; font-size: 1.45rem; font-weight: 700; }
-.sig-en { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--text-muted); }
+.sig-fa { font-family: 'Amiri', serif; font-size: 1.45rem; font-weight: 700; color: #0F172A; }
+.sig-en { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: #334155; }
 
 .rsvp-header {
   display: flex;
@@ -640,11 +643,11 @@ body {
   margin-bottom: 1.25rem;
 }
 
-.rsvp-title { font-family: 'Amiri', serif; font-size: 1.35rem; font-weight: 700; }
-.rsvp-badge { font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; background: var(--bg-subtle); border-radius: 9999px; }
+.rsvp-title { font-family: 'Amiri', serif; font-size: 1.35rem; font-weight: 700; color: #0F172A; }
+.rsvp-badge { font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; background: rgba(255,255,255,0.8); border-radius: 9999px; }
 
 .form-group { text-align: right; margin-bottom: 1rem; }
-.form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem; }
+.form-group label { display: block; font-size: 0.8rem; font-weight: 800; color: #1E293B; margin-bottom: 0.35rem; }
 .req { color: #E11D48; }
 
 .form-group input[type="text"],
@@ -652,8 +655,8 @@ body {
 .form-group textarea {
   width: 100%;
   padding: 0.7rem 0.9rem;
-  background: rgba(248, 250, 252, 0.8);
-  border: 1px solid var(--border-slate-light);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border-slate);
   border-radius: 0.75rem;
   font-family: inherit;
   font-size: 0.85rem;
@@ -667,15 +670,16 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  background: rgba(248, 250, 252, 0.8);
-  border: 1px solid var(--border-slate-light);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border-slate);
   border-radius: 0.75rem;
   cursor: pointer;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: #1E293B;
 }
 
-.radio-label.active { background: #F1F5F9; border-color: #94A3B8; font-weight: 700; }
+.radio-label.active { background: #FFFFFF; border-color: #64748B; font-weight: 800; }
 
 .btn-submit {
   width: 100%;
@@ -691,7 +695,7 @@ body {
   margin-top: 0.5rem;
 }
 
-.rsvp-success { padding: 1.5rem; background: var(--bg-subtle); border-radius: 1rem; }
+.rsvp-success { padding: 1.5rem; background: rgba(255,255,255,0.9); border-radius: 1rem; }
 .rsvp-success.hidden { display: none; }
 .success-icon { width: 44px; height: 44px; border-radius: 50%; background: #DCFCE7; color: #16A34A; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem auto; font-weight: 700; }
 
@@ -712,4 +716,3 @@ body {
   .venue-buttons { flex-direction: row; }
   .venue-buttons .btn { flex: 1; }
 }
-
