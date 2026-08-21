@@ -1,6 +1,6 @@
 /* =========================================================
-   Luxury Persian Wedding Invitation - Style
-   White Theme with Slate Grey Borders & Gold Accents
+   Luxury Digital Wedding Invitation - Premium Theme
+   White Theme with Slate Grey Accents & Gilded Gold Botanicals
    ========================================================= */
 
 * {
@@ -33,11 +33,11 @@ body {
   line-height: 1.6;
 }
 
-/* ----------------- تایپوگرافی ----------------- */
+/* ----------------- تایپوگرافی اشرافی ----------------- */
 .heading-cinzel {
   font-family: 'Cinzel', serif;
-  letter-spacing: 0.25em;
-  font-size: 1.75rem;
+  letter-spacing: 0.28em;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--text-dark);
   text-transform: uppercase;
@@ -46,14 +46,14 @@ body {
 
 .heading-fa {
   font-family: 'Amiri', serif;
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: var(--text-dark);
   margin-top: 0.5rem;
 }
 
 .gold-accent-line {
-  width: 90px;
+  width: 100px;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--border-slate), transparent);
   margin: 0.6rem auto 1.5rem auto;
@@ -127,7 +127,7 @@ body {
   cursor: pointer;
 }
 
-/* ----------------- صفحه اول: پاکت حریر تمام صفحه ----------------- */
+/* ----------------- صفحه اول: پاکت حریر با تاج گلبرگ اسلیمی ----------------- */
 .envelope-overlay {
   position: fixed;
   inset: 0;
@@ -176,7 +176,16 @@ body {
   border-radius: 1.1rem;
 }
 
-/* لبه‌های مثلثی پاکت */
+.corner-ornament {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+}
+.corner-ornament.top-l { top: 0.5rem; left: 0.5rem; border-top: 2px solid #94A3B8; border-left: 2px solid #94A3B8; }
+.corner-ornament.top-r { top: 0.5rem; right: 0.5rem; border-top: 2px solid #94A3B8; border-right: 2px solid #94A3B8; }
+.corner-ornament.bot-l { bottom: 0.5rem; left: 0.5rem; border-bottom: 2px solid #94A3B8; border-left: 2px solid #94A3B8; }
+.corner-ornament.bot-r { bottom: 0.5rem; right: 0.5rem; border-bottom: 2px solid #94A3B8; border-right: 2px solid #94A3B8; }
+
 .flap {
   position: absolute;
   inset: 0;
@@ -212,7 +221,6 @@ body {
   transform: rotateX(180deg);
 }
 
-/* مهر موم طلایی در مرکز */
 .center-seal-wrapper {
   position: relative;
   z-index: 30;
@@ -224,29 +232,44 @@ body {
 
 .glow-ring {
   position: absolute;
-  width: 130px;
-  height: 130px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  background: rgba(212, 175, 55, 0.2);
-  filter: blur(20px);
+  background: rgba(212, 175, 55, 0.22);
+  filter: blur(30px);
   animation: pulseGlow 2.5s infinite ease-in-out;
 }
 
 @keyframes pulseGlow {
-  0%, 100% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.15); opacity: 1; }
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.18); opacity: 0.9; }
+}
+
+.botanical-wreath-svg {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  pointer-events: none;
+  animation: rotateWreath 40s linear infinite;
+}
+
+@keyframes rotateWreath {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .wax-seal {
-  width: 90px;
-  height: 90px;
+  position: relative;
+  z-index: 2;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, #D4AF37 0%, #A67C1E 55%, #684B0B 100%);
-  box-shadow: 0 10px 25px rgba(112, 79, 24, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 14px 32px rgba(112, 79, 24, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .wax-seal:hover {
@@ -263,8 +286,8 @@ body {
 }
 
 .wax-seal-inner {
-  width: 72px;
-  height: 72px;
+  width: 78px;
+  height: 78px;
   border-radius: 50%;
   border: 1.5px dashed rgba(255, 248, 220, 0.75);
   display: flex;
@@ -276,9 +299,9 @@ body {
 
 .monogram {
   font-family: 'Cinzel', serif;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
 }
 
 .divider {
@@ -287,7 +310,7 @@ body {
 }
 
 .seal-line {
-  width: 20px;
+  width: 24px;
   height: 1px;
   background: rgba(255, 248, 220, 0.7);
   margin: 2px 0;
@@ -299,20 +322,30 @@ body {
 }
 
 .seal-touch-hint {
-  margin-top: 1.5rem;
-  padding: 0.4rem 1.1rem;
-  background: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 2;
+  margin-top: 2.5rem;
+  padding: 0.5rem 1.35rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(6px);
   border: 1px solid #CBD5E1;
   border-radius: 9999px;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #334155;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   animation: pulseHint 2s infinite ease-in-out;
 }
 
+.sparkle-icon {
+  color: #D4AF37;
+}
+
 @keyframes pulseHint {
-  0%, 100% { opacity: 0.85; }
+  0%, 100% { opacity: 0.9; }
   50% { opacity: 1; transform: translateY(-2px); }
 }
 
@@ -334,47 +367,45 @@ body {
   justify-content: center;
 }
 
-.corner-decor {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  pointer-events: none;
-}
-.corner-decor.top-left { top: 1rem; left: 1rem; border-top: 2px solid var(--border-slate); border-left: 2px solid var(--border-slate); }
-.corner-decor.top-right { top: 1rem; right: 1rem; border-top: 2px solid var(--border-slate); border-right: 2px solid var(--border-slate); }
-.corner-decor.bottom-left { bottom: 1rem; left: 1rem; border-bottom: 2px solid var(--border-slate); border-left: 2px solid var(--border-slate); }
-.corner-decor.bottom-right { bottom: 1rem; right: 1rem; border-bottom: 2px solid var(--border-slate); border-right: 2px solid var(--border-slate); }
-
 .section-badge {
   display: inline-flex;
-  padding: 0.3rem 1rem;
+  padding: 0.35rem 1.1rem;
   background: var(--bg-subtle);
   border: 1px solid var(--border-slate-light);
   border-radius: 9999px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-muted);
   letter-spacing: 0.15em;
   margin-bottom: 0.75rem;
 }
 
-/* ----------------- عکس کودکی و اسامی ----------------- */
+/* ----------------- قاب عکس کودکی و اسامی ----------------- */
+.photo-card-botanical-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
 .photo-card {
-  width: 270px;
-  height: 270px;
+  position: relative;
+  z-index: 2;
+  width: 260px;
+  height: 260px;
   padding: 0.6rem;
   background: #FFFFFF;
   border: 1px solid var(--border-slate-light);
-  border-radius: 1.25rem;
+  border-radius: 1.5rem;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(203, 213, 225, 0.5);
-  margin-top: 0.5rem;
 }
 
 .photo-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 0.9rem;
+  border-radius: 1.1rem;
   overflow: hidden;
   border: 1px dashed var(--border-slate);
 }
@@ -389,7 +420,7 @@ body {
   position: absolute;
   bottom: 0.5rem;
   inset-inline: 0.5rem;
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(15, 23, 42, 0.7);
   backdrop-filter: blur(4px);
   color: #FFFFFF;
   font-size: 0.7rem;
@@ -400,19 +431,21 @@ body {
 .couple-names-wrap {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .name-en {
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
+  color: var(--text-dark);
 }
 
 .heart-badge {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: #F1F5F9;
   border: 1px solid var(--border-slate);
@@ -433,17 +466,9 @@ body {
   50% { transform: scale(1.18); }
 }
 
-.couple-names-fa {
-  font-family: 'Amiri', serif;
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: #334155;
-  margin-top: 0.25rem;
-}
-
 .quote-box {
-  margin-top: 0.75rem;
-  padding: 0.5rem 1.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1.75rem;
   background: var(--bg-subtle);
   border: 1px solid var(--border-slate-light);
   border-radius: 1rem;
@@ -451,7 +476,7 @@ body {
 
 .quote-text {
   font-family: 'Amiri', serif;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--text-dark);
 }
@@ -459,7 +484,7 @@ body {
 .family-names-box {
   width: 100%;
   max-width: 400px;
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
   padding: 1rem;
   background: var(--bg-subtle);
   border: 1px solid var(--border-slate-light);
@@ -484,26 +509,19 @@ body {
   margin: 0 0.35rem;
 }
 
-.family-title-fa {
-  font-family: 'Amiri', serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #475569;
-  margin-top: 0.2rem;
-}
-
 /* ----------------- دیوایدرهای اسلیمی ----------------- */
 .floral-divider {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 1.25rem 0;
+  color: var(--gold-primary);
 }
 
 .divider-line {
   flex: 1;
-  max-width: 140px;
+  max-width: 150px;
   height: 1px;
   background: linear-gradient(90deg, transparent, #CBD5E1);
 }
@@ -514,17 +532,11 @@ body {
 
 .divider-icon {
   padding: 0 0.75rem;
-  display: flex;
-  align-items: center;
+  font-size: 1.1rem;
 }
 
-.divider-icon svg {
-  width: 32px;
-  height: 24px;
-}
-
-/* ----------------- بخش‌های با عکس پس‌زمینه ----------------- */
-.section-poem, .section-venue {
+/* ----------------- بخش‌های با پس‌زمینه عکس (شفاف‌تر برای وضوح عکس‌ها) ----------------- */
+.section-poem, .section-venue, .section-rsvp {
   position: relative;
   overflow: hidden;
   border-radius: 1.5rem;
@@ -540,11 +552,17 @@ body {
   transform: scale(1.04);
 }
 
+/* لایه محوی بسیار ملایم تا عکس‌های پس‌زمینه کاملاً واضح و شفاف دیده شوند */
 .section-bg-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(1px);
+}
+
+.section-bg-overlay-sharp {
+  background: rgba(255, 255, 255, 0.40);
+  backdrop-filter: blur(0.5px);
 }
 
 .relative-content {
@@ -557,10 +575,11 @@ body {
 }
 
 .poem-card {
+  position: relative;
   width: 100%;
   max-width: 480px;
-  padding: 1.75rem;
-  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--border-slate-light);
   border-radius: 1.25rem;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
@@ -568,74 +587,107 @@ body {
 
 .names-subheading {
   font-family: 'Amiri', serif;
-  font-size: 1.5rem;
+  font-size: 1.85rem;
   font-weight: 700;
+  color: var(--text-dark);
 }
 
-.family-subheading {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-weight: 600;
+.card-separator-floral {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.75rem 0;
 }
 
-.card-separator {
-  width: 50px;
-  height: 1px;
-  background: var(--border-slate);
-  margin: 0.75rem auto;
+.sep-symbol {
+  color: var(--gold-primary);
+  font-size: 1rem;
 }
 
 .poem-quote {
   font-family: 'Amiri', serif;
-  font-size: 1.45rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--text-dark);
   line-height: 1.8;
-  margin: 0.5rem 0;
+  margin-top: 0.25rem;
 }
 
-.poem-desc {
-  font-size: 0.8rem;
-  color: #475569;
-  line-height: 1.6;
-}
-
-.details-grid {
+/* چیدمان عمودی و متمرکز کارت‌های تاریخ و زمان */
+.details-vertical-stack {
   width: 100%;
   max-width: 480px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 0.75rem;
   margin-top: 1rem;
 }
 
-.detail-card {
-  padding: 0.9rem;
-  background: rgba(255, 255, 255, 0.95);
+.detail-card-vertical {
+  padding: 1.1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--border-slate-light);
-  border-radius: 1rem;
+  border-radius: 1.1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  text-align: right;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
 }
 
-.detail-icon {
-  font-size: 1.3rem;
+@media (min-width: 640px) {
+  .detail-card-vertical {
+    flex-direction: row;
+    gap: 1.2rem;
+    text-align: right;
+    justify-content: flex-start;
+  }
+}
+
+.detail-icon-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  border: 1px solid var(--border-slate-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  margin-bottom: 0.35rem;
+}
+
+@media (min-width: 640px) {
+  .detail-icon-circle {
+    margin-bottom: 0;
+  }
+}
+
+.detail-text-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .detail-text-centered {
+    align-items: flex-start;
+  }
 }
 
 .detail-title {
-  display: block;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .detail-val {
-  display: block;
-  font-size: 0.85rem;
+  font-family: 'Amiri', serif;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-dark);
+  margin-top: 0.15rem;
 }
 
 /* ----------------- تایمر شمارش معکوس ----------------- */
@@ -650,7 +702,7 @@ body {
 
 .timer-box {
   padding: 0.75rem 0.25rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--border-slate-light);
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
@@ -658,7 +710,7 @@ body {
 
 .timer-num {
   display: block;
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--text-dark);
 }
@@ -683,7 +735,7 @@ body {
   width: 100%;
   max-width: 480px;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--border-slate-light);
   border-radius: 1.25rem;
 }
@@ -717,7 +769,7 @@ body {
 
 .venue-title {
   font-family: 'Amiri', serif;
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   font-weight: 700;
 }
 
@@ -739,7 +791,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
+  padding: 0.8rem 1.25rem;
   border-radius: 0.75rem;
   font-size: 0.85rem;
   font-weight: 700;
@@ -772,16 +824,17 @@ body {
 .story-card {
   width: 100%;
   max-width: 480px;
-  padding: 1.5rem;
-  background: var(--bg-subtle);
+  padding: 1.75rem;
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--border-slate-light);
   border-radius: 1.25rem;
   margin-bottom: 1.5rem;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
 }
 
 .story-text {
   font-family: 'Amiri', serif;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.9;
   color: var(--text-dark);
   font-weight: 600;
@@ -789,8 +842,8 @@ body {
 
 .deadline-banner {
   margin-top: 1rem;
-  padding: 0.6rem 1rem;
-  background: #FFFFFF;
+  padding: 0.65rem 1rem;
+  background: #F8FAFC;
   border: 1px solid var(--border-slate-light);
   border-radius: 0.75rem;
   font-size: 0.8rem;
@@ -808,7 +861,7 @@ body {
 
 .sig-fa {
   font-family: 'Amiri', serif;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 700;
 }
 
@@ -822,10 +875,10 @@ body {
   width: 100%;
   max-width: 480px;
   padding: 1.75rem;
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--border-slate-light);
   border-radius: 1.25rem;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
 }
 
 .rsvp-header {
@@ -839,7 +892,7 @@ body {
 
 .rsvp-title {
   font-family: 'Amiri', serif;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 700;
 }
 
@@ -873,7 +926,7 @@ body {
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 0.65rem 0.9rem;
+  padding: 0.7rem 0.9rem;
   background: var(--bg-subtle);
   border: 1px solid var(--border-slate-light);
   border-radius: 0.75rem;
@@ -937,7 +990,6 @@ body {
   background: #0F172A;
 }
 
-/* کارت وضعیت ثبت موفق */
 .rsvp-success {
   padding: 1.5rem;
   background: var(--bg-subtle);
@@ -959,7 +1011,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
-  font-weight: bold;
+  font-weight: 700;
   margin: 0 auto 0.75rem auto;
 }
 
@@ -1012,4 +1064,5 @@ body {
   .venue-buttons .btn {
     flex: 1;
   }
-                            }
+}
+
