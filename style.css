@@ -1,3 +1,9 @@
+/* =========================================================
+   Luxury Digital Wedding Invitation - Premium Theme
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=IranNastaliq&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -61,9 +67,7 @@ body {
   gap: 0.5rem;
 }
 
-.floating-audio.hidden {
-  display: none;
-}
+.floating-audio.hidden { display: none; }
 
 .audio-btn {
   width: 48px;
@@ -82,7 +86,6 @@ body {
 .icon { width: 22px; height: 22px; }
 .icon.hidden { display: none; }
 .spinning { animation: spin 4s linear infinite; }
-
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
 .volume-slider-wrapper {
@@ -368,8 +371,8 @@ body {
 }
 
 .quote-text {
-  font-family: 'Amiri', serif;
-  font-size: 1.35rem;
+  font-family: 'IranNastaliq', 'Amiri', serif;
+  font-size: 1.7rem;
   font-weight: 700;
   color: var(--text-dark);
 }
@@ -401,7 +404,7 @@ body {
 .divider-line.right { background: linear-gradient(270deg, transparent, #CBD5E1); }
 .divider-icon { padding: 0 0.75rem; font-size: 1.1rem; }
 
-/* ----------------- تنظیم وضوح بالا و ملموس بودن عکس‌های پس‌زمینه ----------------- */
+/* ----------------- عکس‌های پس‌زمینه با حداکثر وضوح و شفافیت ----------------- */
 .section-poem, .section-venue, .section-rsvp {
   position: relative;
   overflow: hidden;
@@ -418,11 +421,11 @@ body {
   transform: scale(1.04);
 }
 
-/* لایه بسیار شفاف (فقط ۱۵ درصد پوشش) تا عکس‌های پس‌زمینه کاملاً ملموس و زنده دیده شوند */
+/* لایه بسیار نامحسوس (فقط ۵ درصد پوشش) تا عکس‌ها کاملاً جلوه داشته باشند */
 .section-bg-overlay-visible {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(0px);
 }
 
@@ -440,7 +443,7 @@ body {
   width: 100%;
   max-width: 480px;
   padding: 1.75rem;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.90);
   border: 1px solid var(--border-slate-light);
   border-radius: 1.25rem;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
@@ -448,8 +451,8 @@ body {
 }
 
 .names-subheading {
-  font-family: 'Amiri', serif;
-  font-size: 1.85rem;
+  font-family: 'IranNastaliq', 'Amiri', serif;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--text-dark);
 }
@@ -463,12 +466,18 @@ body {
 
 .sep-symbol { color: var(--gold-primary); font-size: 1rem; }
 
+/* شعر با فونت هنری و کلمات بزرگ‌تر جهان و جانِ */
 .poem-quote {
-  font-family: 'Amiri', serif;
-  font-size: 1.6rem;
+  font-family: 'IranNastaliq', 'Amiri', serif;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--text-dark);
-  line-height: 1.8;
+  line-height: 2.2;
+}
+
+.big-word {
+  font-size: 1.35em;
+  color: var(--gold-dark, #8C6D31);
 }
 
 .details-vertical-stack {
@@ -481,7 +490,7 @@ body {
 
 .detail-card-vertical {
   padding: 1.1rem 1.25rem;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.90);
   border: 1px solid var(--border-slate-light);
   border-radius: 1.1rem;
   display: flex;
@@ -536,7 +545,7 @@ body {
 
 .timer-box {
   padding: 0.75rem 0.25rem;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.90);
   border: 1px solid var(--border-slate-light);
   border-radius: 1rem;
 }
@@ -680,7 +689,7 @@ body {
 
 .rsvp-success { padding: 1.5rem; background: var(--bg-subtle); border-radius: 1rem; }
 .rsvp-success.hidden { display: none; }
-.success-icon { width: 44px; height: 44px; border-radius: 50%; background: #DCFCE7; color: #16A34A; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem auto; font-weight: bold; }
+.success-icon { width: 44px; height: 44px; border-radius: 50%; background: #DCFCE7; color: #16A34A; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem auto; font-weight: 700; }
 
 .site-footer {
   padding: 2.5rem 1rem 3rem 1rem;
