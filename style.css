@@ -1,5 +1,5 @@
-/* --- تنظیمات پایه و بافت حریر و تور لوکس --- */
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap');
+/* --- فونت‌ها و تنظیمات پایه --- */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
 
 * {
     box-sizing: border-box;
@@ -9,142 +9,759 @@
 }
 
 body {
-    background-color: #fdfbf7;
-    /* ایجاد بافت لطیف و حریرگونه با گرادینت‌های نرم */
-    background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px), 
-                      linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(248, 243, 235, 0.98));
-    background-size: 24px 24px, 100% 100%;
+    background-color: #fcfbfa;
     color: #2c2c2c;
-    min-height: 100vh;
+    overflow-x: hidden;
+    direction: rtl;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- لایه پوشاننده پاکت و انیمیشن باز شدن (Envelope Overlay) --- */
+.envelope-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #fdfbf7 0%, #f4eee1 100%);
+    z-index: 99999;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-}
-
-/* کانتینر اصلی کارت دعوت */
-.wedding-container {
-    width: 100%;
-    max-width: 480px;
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(212, 175, 55, 0.35);
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06), inset 0 0 20px rgba(255, 255, 255, 0.9);
     overflow: hidden;
-    position: relative;
-    padding: 25px 20px;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* لبه‌های توری و دانتل تزئینی */
-.wedding-container::before {
-    content: "";
-    position: absolute;
-    top: 6px; left: 6px; right: 6px; bottom: 6px;
-    border: 1px dashed rgba(212, 175, 55, 0.3);
-    border-radius: 15px;
+/* وقتی دکمه لمس می‌شود این کلاس فعال می‌شود تا پاکت محو و کنار برود */
+.envelope-overlay.envelope-opening {
+    opacity: 0;
+    transform: scale(1.15);
     pointer-events: none;
 }
 
-/* بخش هدر و اسامی */
-.header-section {
+.envelope-silk-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(240,230,210,0.6) 100%);
+    z-index: 1;
+}
+
+/* بافت تور و حریر روی پاکت */
+.envelope-lace-bg {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(197, 160, 89, 0.12) 2px, transparent 2px);
+    background-size: 20px 20px;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+/* قاب سلطنتی دور صفحه پاکت */
+.screen-frame {
+    position: absolute;
+    inset: 15px;
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    z-index: 5;
+    pointer-events: none;
+}
+.screen-frame-inner {
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+}
+.corner-ornament {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-color: #C5A059;
+    border-style: solid;
+}
+.top-l { top: 0; left: 0; border-width: 2px 0 0 2px; }
+.top-r { top: 0; right: 0; border-width: 2px 2px 0 0; }
+.bot-l { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
+.bot-r { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+
+/* بخش مرکزی لاک و مهر */
+.center-seal-wrapper {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.center-seal-wrapper:hover {
+    transform: scale(1.03);
+}
+
+.glow-ring {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197,160,89,0.3) 0%, transparent 70%);
+    animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(0.95); opacity: 0.6; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.6; }
+}
+
+.botanical-wreath-svg {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    animation: rotateWreath 30s linear infinite;
+}
+
+@keyframes rotateWreath {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* استایل مومی مُهر */
+.wax-seal {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 30% 30%, #e6ca75 0%, #b8973b 60%, #806117 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(132, 102, 30, 0.4), inset 0 3px 6px rgba(255, 255, 255, 0.6), inset 0 -3px 6px rgba(0, 0, 0, 0.4);
+    border: 2px dashed rgba(255, 255, 255, 0.7);
+    position: relative;
+    z-index: 3;
+}
+
+.wax-seal-inner {
     text-align: center;
-    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
-.invitation-title {
-    font-size: 0.85rem;
+.monogram {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.monogram .divider {
+    color: #fff;
+    opacity: 0.8;
+}
+.seal-line {
+    width: 35px;
+    height: 1px;
+    background: rgba(255,255,255,0.7);
+    margin: 3px auto;
+}
+.seal-year {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.seal-touch-hint {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #8c6d28;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 8px 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    animation: bounceHint 2s infinite;
+}
+
+.sparkle-icon {
+    color: #C5A059;
+    font-size: 0.8rem;
+}
+
+@keyframes bounceHint {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+
+/* --- استایل‌های اصلی کارت دعوت (محتوا) --- */
+.main-container {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.page-section {
+    padding: 40px 20px;
+    position: relative;
+    text-align: center;
+}
+
+.section-badge {
+    margin-bottom: 12px;
+}
+.section-badge span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
     letter-spacing: 3px;
-    color: #9a7b38;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    color: #b8973b;
+    background: rgba(184, 151, 59, 0.08);
+    padding: 5px 15px;
+    border-radius: 20px;
 }
 
-.couple-names {
-    font-size: 1.8rem;
+.heading-cinzel {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #1a1a1a;
-    margin: 10px 0;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
 }
 
-.quote-sub {
-    font-size: 0.95rem;
-    color: #555;
-    font-style: italic;
+.gold-accent-line {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C5A059, transparent);
+    margin: 15px auto 25px auto;
 }
 
-/* قاب عکس عروس و داماد */
-.photo-frame-box {
-    position: relative;
-    border-radius: 16px;
+/* عکس بچگی / کاور */
+.photo-card-botanical-wrap {
+    padding: 10px;
+    background: rgba(197, 160, 89, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    margin-bottom: 25px;
+}
+.photo-card {
+    border-radius: 14px;
     overflow: hidden;
-    border: 2px solid #d4af37;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-    background: #000;
+    position: relative;
 }
-
-.photo-frame-box img {
+.photo-inner img {
     width: 100%;
     height: auto;
     display: block;
-    filter: grayscale(100%); /* حفظ استایل سیاه و سفید شیک */
-    transition: filter 0.3s ease;
+    border-radius: 12px;
+}
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    padding: 15px 10px 10px 10px;
+    color: #fff;
+    font-size: 0.85rem;
 }
 
-.photo-frame-box:hover img {
-    filter: grayscale(0%); /* با هاوور رنگی شود یا بماند */
+/* اسامی عروس و داماد */
+.couple-names-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+.name-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c2c2c;
+}
+.heart-badge {
+    width: 35px;
+    height: 35px;
+    background: #fdf2f4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d97706;
+}
+.heart-icon {
+    width: 18px;
+    height: 18px;
 }
 
-/* استایل کارت‌های شیشه‌ای و حریر برای شعر و جزئیات */
-.glass-card {
-    background: rgba(255, 255, 255, 0.65);
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: 14px;
-    padding: 18px;
-    margin: 15px 0;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+.quote-box {
+    margin: 15px 0 25px 0;
+}
+.quote-text {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
 }
 
-/* استایل شعر با کلمات برجسته طلایی */
-.poem-text {
-    font-size: 1.05rem;
-    line-height: 2.2;
-    color: #333;
+.family-names-box {
+    background: #f9f8f6;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+.family-label {
+    font-size: 0.85rem;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+}
+.family-title-en {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    color: #b8973b;
+    font-weight: 600;
+}
+.family-sep {
+    margin: 0 8px;
+    color: #d97706;
 }
 
-.gold-word {
+/* دیوایدر گل‌دار میان بخش‌ها */
+.floral-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    background: #fff;
+}
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: #e2e8f0;
+}
+.divider-icon {
+    padding: 0 15px;
+    color: #C5A059;
+    font-size: 1rem;
+}
+
+/* بخش شعر و پس‌زمینه تصویر دوم */
+.section-poem, .section-rsvp {
+    position: relative;
+    color: #fff;
+}
+.section-bg-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.35);
+    z-index: 1;
+}
+.relative-content {
+    position: relative;
+    z-index: 2;
+}
+
+.poem-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+.names-subheading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.card-separator-floral {
+    color: #e2ca84;
+    margin-bottom: 15px;
+}
+.poem-quote {
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem;
+    line-height: 2.4;
+}
+.big-word {
+    font-size: 1.8rem;
+    color: #f6e05e;
+    text-shadow: 0 2px 10px rgba(246, 224, 94, 0.5);
+    font-weight: 700;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+/* جزئیات تاریخ و ساعت */
+.details-vertical-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+.detail-card-vertical {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: right;
+}
+.detail-icon-circle {
+    font-size: 1.5rem;
+    background: rgba(197, 160, 89, 0.2);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.detail-title {
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    display: block;
+}
+.detail-val {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* بخش شمارش معکوس و تالار */
+.heading-fa {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #9a7b38;
-    text-shadow: 0 2px 4px rgba(212, 175, 55, 0.2);
-    display: inline-block;
-    padding: 0 4px;
+    color: #1a1a1a;
 }
-
-/* بخش تاریخ و ساعت و تالار */
-.details-section {
-    text-align: center;
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
     margin: 20px 0;
-    font-size: 0.95rem;
-    color: #444;
-    line-height: 1.8;
 }
-
-.venue-box {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(245, 240, 232, 0.9));
-    border: 1px solid #d4af37;
-    border-radius: 12px;
-    padding: 15px;
-    margin-top: 15px;
+.timer-box {
+    background: #fdfbf7;
+    border: 1px solid #e2ca84;
+    padding: 12px 5px;
+    border-radius: 10px;
     text-align: center;
 }
-
-.venue-title {
+.timer-num {
+    font-size: 1.2rem;
     font-weight: 700;
-    color: #9a7b38;
+    color: #b8973b;
+    display: block;
+}
+.timer-unit {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.venue-card {
+    background: #fdfbf7;
+    border: 1px solid #e2ca84;
+    border-radius: 16px;
+    padding: 15px;
+    margin-top: 20px;
+}
+.venue-photo-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+.venue-photo-wrapper img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+.venue-tag {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+.venue-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
     margin-bottom: 5px;
+}
+.venue-address {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.venue-buttons {
+    display: flex;
+    gap: 10px;
+}
+.btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+.btn-neshan {
+    background: #00C853;
+    color: #fff;
+    border: none;
+}
+.btn-copy {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+}
+
+/* فرم RSVP و استوری کارت */
+.story-card {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    text-align: right;
+    line-height: 1.8;
+    font-size: 0.9rem;
+}
+.deadline-banner {
+    background: rgba(184, 151, 59, 0.3);
+    border-right: 3px solid #C5A059;
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 0.85rem;
+    border-radius: 4px;
+}
+.closing-signature {
+    text-align: center;
+    margin-top: 15px;
+}
+.sig-fa {
+    display: block;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+.sig-en {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+}
+
+.rsvp-card {
+    background: #ffffff;
+    color: #1a1a1a;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: right;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.rsvp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.rsvp-title {
+    font-size: 1rem;
+    font-weight: 700;
+}
+.rsvp-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    background: #C5A059;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+.req {
+    color: #e53e3e;
+}
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+    background: #f8fafc;
+}
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #C5A059;
+    background: #fff;
+}
+.radio-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+.radio-label.active {
+    background: #fef9c3;
+    border-color: #f6e05e;
+}
+
+.btn-submit {
+    width: 100%;
+    background: #b8973b;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.rsvp-success {
+    text-align: center;
+    padding: 20px 0;
+}
+.success-icon {
+    width: 50px;
+    height: 50px;
+    background: #22c55e;
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+}
+.btn-edit {
+    background: transparent;
+    color: #64748b;
+    border: 1px solid #cbd5e1;
+    padding: 6px 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* فوتر سایت */
+.site-footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+}
+.footer-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: #C5A059;
+    margin-bottom: 5px;
+}
+.footer-date {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+.footer-note {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+/* کنترل صوت شناور */
+.floating-audio {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    background: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    padding: 8px;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.audio-btn {
+    background: #C5A059;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.audio-btn .icon {
+    width: 20px;
+    height: 20px;
+}
+.spinning {
+    animation: spinDisc 4s linear infinite;
+}
+@keyframes spinDisc {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.volume-slider-wrapper {
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    margin-left: 0;
+}
+.floating-audio:hover .volume-slider-wrapper {
+    width: 70px;
+    margin-left: 8px;
+}
+.volume-slider-wrapper input {
+    width: 70px;
+    accent-color: #C5A059;
 }
 
